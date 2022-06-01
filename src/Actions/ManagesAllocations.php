@@ -10,13 +10,13 @@ trait ManagesAllocations
      * Get the collection of allocations for a given node.
      *
      * @param int $nodeId
-     * @param int $page
+     * @param array $params
      *
      * @return array
      */
-    public function allocations(int $nodeId, int $page = 1)
+    public function allocations(int $nodeId, array $params = [])
     {
-        return $this->get("api/application/nodes/$nodeId".'/allocations?page='.$page);
+        return $this->get("api/application/nodes/$nodeId".'/allocations?'.http_build_query($params));
     }
 
     /**

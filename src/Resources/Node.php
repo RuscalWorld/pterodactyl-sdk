@@ -162,13 +162,13 @@ class Node extends Resource
     /**
      * Get a collection of allocations of the given node.
      *
-     * @param int $page
+     * @param array $params
      *
      * @return array
      */
-    public function allocations(int $page = 1)
+    public function allocations(array $params = [])
     {
-        return $this->pterodactyl->allocations($this->id, $page);
+        return $this->pterodactyl->allocations($this->id, $params);
     }
 
     /**
