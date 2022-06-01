@@ -20,7 +20,7 @@ class ValidationException extends Exception
      */
     public function __construct(array $errors)
     {
-        parent::__construct('The given data failed to pass validation.');
+        parent::__construct(json_encode($errors));
 
         $this->errors = $errors;
     }
